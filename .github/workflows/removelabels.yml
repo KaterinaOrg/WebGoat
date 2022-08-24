@@ -1,6 +1,6 @@
 name: Remove Label
 
-on: [issue_comment]
+on: workflow_dispatch
 
 jobs:
   remove_label:
@@ -10,5 +10,4 @@ jobs:
       - uses: actions-ecosystem/action-remove-labels@v1
         if: ${{ startsWith(CVE-2021, '/remove-labels') }}
         with:
-          github_token: ${{ secrets.github_token }}
           labels: security vulnerability
